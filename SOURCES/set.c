@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 19:04:16 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/11 20:00:19 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/24 22:48:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,20 @@ int			set_link(t_env *e, char **split)
 	return (ret);
 }
 
-int			set_weight_end(t_env *e, t_node *n, int weight)
+int			set_weight_end(t_env *e, t_node *n, int w)
 {
 	int	i;
 
 	i = -1;
 	if (!n || !n->links)
 		return (0);
-	n->weight_end = weight;
+	n->weight_end = !n->weight_end || w < n->weight_end ? w : n->weight_end;
 	n->ant_count = n->isbegin ? e->nb_ants : 0;
 	if (n->isbegin && ++e->path_found)
 		return (1);
 	n->viewed = 1;
 	while (n->links && n->links[++i])
 		if (!n->links[i]->viewed)
-			set_weight_end(e, n->links[i], weight + 1);
+			set_weight_end(e, n->links[i], w + 1);
 	return (1);
 }

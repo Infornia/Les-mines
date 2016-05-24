@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 08:18:03 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/23 00:28:07 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/24 23:54:23 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int		move_this(t_node **in, t_node **out, int first_move, int m)
 	return (first_move);
 }
 
-static int		move_ants(t_node **nodes, int nb_nodes, int m)
+static int		move_ants(t_node **nodes, int nb_nodes, int m, int nb_paths)
 {
 	int		i;
 	int		j;
@@ -74,10 +74,12 @@ static int		move_ants(t_node **nodes, int nb_nodes, int m)
 		j = 0;
 		while (links[j])
 		{
+//			links[j]->isbegin ? tt_psn("\nCalculation", nb_paths + links[j]->ant_count) : 0;
 			if ((!nodes[i]->ant_count || nodes[i]->isend)
 				&& links[j]->ant_count
-				&& (nodes[i]->weight_end < links[j]->weight_end
-				|| nodes[i]->weight_end < links[j]->weight_end))
+				&& ((nodes[i]->weight_end < links[j]->weight_end && !nodes[i]->isbegin)
+				|| (links[j]->isbegin 
+				&& nodes[i]->weight_end < links[j]->ant_count + nb_paths - 1)))
 				first_move = move_this(&nodes[i], &links[j], first_move, m);
 			++j;
 		}
@@ -90,6 +92,6 @@ static int		move_ants(t_node **nodes, int nb_nodes, int m)
 int				solve(t_env *e)
 {
 	while (e->nodes[0]->ant_count != e->nb_ants)
-		move_ants(e->nodes, e->nb_nodes, e->move);
+		move_ants(e->nodes, e->nb_nodes, e->move, e->path_found);
 	return (1);
 }
