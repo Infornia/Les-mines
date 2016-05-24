@@ -1,0 +1,34 @@
+##move
+22
+0 0 0
+1 1 1
+2 2 2
+3 3 3
+4 4 4
+5 5 5
+a 6 6
+b 7 7
+##color
+c 8 8
+d 9 9
+e 10 10
+##start
+MEGALOL 100 100
+##end
+MINILOL 100 100
+MEGALOL-0
+0-1
+1-2
+2-3
+3-4
+4-5
+5-a
+a-b
+b-MINILOL
+MEGALOL-c
+c-d
+e-c
+##info
+d-e
+e-MINILOL
+MINILOL-a
