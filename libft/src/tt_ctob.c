@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 17:52:54 by mwilk             #+#    #+#             */
-/*   Updated: 2016/03/21 18:59:43 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:21:30 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 unsigned char	*tt_ctob(int c)
 {
 	unsigned char	*r;
-	int     i;
+	int				i;
 
 	r = malloc(8);
 	ft_bzero(r, 8);
