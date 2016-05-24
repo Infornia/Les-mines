@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 06:44:13 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/23 00:46:04 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:15:48 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	print_links(t_node **nodes, int nb_nodes)
 	int	j;
 
 	j = -1;
-	tt_ps(MAG "\nPrinting Links\n");
+	tt_pss(RED, "\nPrinting Links\n");
 	if (nodes)
 		while (++j < nb_nodes)
 		{

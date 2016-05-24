@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:51:39 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/22 23:16:30 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:08:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int				parse(t_env *e)
 	{
 		ft_putendl(e->line);
 		if (e->line[0] == '#' && e->line[1] != '#')
-			 ;
+			;
 		else if (e->line[0] == '#' && e->line[1] == '#')
 			check(e, COMMANDS);
 		else if (!parse_step && ++parse_step)

@@ -6,14 +6,14 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 06:44:52 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/11 20:06:42 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:07:22 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lemin.h"
 #include "libft.h"
 
-void	add_link(t_env *e, t_node *node, t_node *add)
+int			add_link(t_env *e, t_node *node, t_node *add)
 {
 	int	i;
 
@@ -25,6 +25,7 @@ void	add_link(t_env *e, t_node *node, t_node *add)
 	}
 	node->links[i] = add;
 	node->links_count++;
+	return (1);
 }
 
 t_node		*find_end(t_env *e)

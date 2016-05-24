@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:50:58 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/23 00:39:35 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:19:49 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ static void		print_result(t_env *env, int i, int after)
 	if (!env->info)
 		return ;
 	if (!after)
-		tt_pss(GRN, "\nBefore : \n\nNombre de fourmis: ");
+		tt_psss(RED, "\nKept this data :\n", BLUE);
 	else
-		tt_pss(GRN, "\nAfter : \n\nNombre de fourmis: ");
-	tt_pns(env->nb_ants, "\n");
+		tt_psss(RED, "\nAfter solving :\n", BLUE);
+	tt_psns("Ants: ", env->nb_ants, "\n");
 	while (env->nodes && i < env->nb_nodes)
 	{
-		tt_pss("name : ", env->nodes[i]->name);
-		tt_psn("\t START: ", env->nodes[i]->isbegin);
+		tt_psss(GRN, "name : ", env->nodes[i]->name);
+		tt_pssn(MAG, "\t START: ", env->nodes[i]->isbegin);
 		tt_psn(" | END: ", env->nodes[i]->isend);
 		tt_psn(" | weight: ", env->nodes[i]->weight_end);
 		tt_psn(" | ants: ", env->nodes[i]->ant_count);
-		tt_psn("\t coord x,y: (", env->nodes[i]->coord.x);
+		tt_pssn(CYAN, "\t coord x,y: (", env->nodes[i]->coord.x);
 		tt_psn(", ", env->nodes[i]->coord.y);
 		tt_ps(")\n");
 		i++;
@@ -58,9 +58,9 @@ static t_env	*init_env(void)
 	return (&env);
 }
 
-static void	error()
+static void		error(void)
 {
-	ft_putendl("ERROR");
+	tt_pss(RED, "ERROR");
 	exit(0);
 }
 
@@ -69,15 +69,14 @@ int				main(void)
 	t_env	*env;
 
 	env = init_env();
-	parse(env) ? ft_putendl("") : tt_ps("ERROR: Not enough data to work with\n");
+	parse(env) ? ft_putendl("") : error();
 	if (env->nodes)
 	{
-		set_weight_end(env, find_end(env), 0) ? 0 : tt_ps(RED "ERROR: Can't put nodes's weight properly\n");
+		set_weight_end(env, find_end(env), 0) ? 0 : error();
 		sort_nodes(env->nodes, env->nb_nodes);
 		print_result(env, 0, 0);
-		env->path_found ? solve(env) : tt_ps(RED "ERROR: Start and end not linked\n");
+		env->path_found ? solve(env) : error();
 		print_result(env, 0, 1);
-//		tt_pn(env->path_found);
 	}
 	else
 		error();

@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 08:18:03 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/24 23:54:23 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:10:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,18 @@ static int		move_ants(t_node **nodes, int nb_nodes, int m, int nb_paths)
 		j = 0;
 		while (links[j])
 		{
-//			links[j]->isbegin ? tt_psn("\nCalculation", nb_paths + links[j]->ant_count) : 0;
 			if ((!nodes[i]->ant_count || nodes[i]->isend)
 				&& links[j]->ant_count
-				&& ((nodes[i]->weight_end < links[j]->weight_end && !nodes[i]->isbegin)
-				|| (links[j]->isbegin 
+				&& ((nodes[i]->weight_end < links[j]->weight_end
+				&& !nodes[i]->isbegin)
+				|| (links[j]->isbegin
 				&& nodes[i]->weight_end < links[j]->ant_count + nb_paths - 1)))
 				first_move = move_this(&nodes[i], &links[j], first_move, m);
 			++j;
 		}
 		++i;
 	}
-	ft_putchar('\n');
-	return (0);
+	return (tt_ps("\n"));
 }
 
 int				solve(t_env *e)

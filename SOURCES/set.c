@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 19:04:16 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/24 22:48:03 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:06:11 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ t_coord		set_coord(char **split)
 	coord.y = 0;
 	if (split && split[1] && split[2]
 		&& ft_isnumber(split[1])
-		&& ft_isnumber(split[2])
-		)
+		&& ft_isnumber(split[2]))
 	{
 		coord.x = ft_atoi(split[1]);
 		coord.y = ft_atoi(split[2]);
@@ -59,11 +58,8 @@ int			set_link(t_env *e, char **split)
 			else if (!ft_strcmp(e->nodes[i]->name, split[1]))
 				node2 = e->nodes[i];
 		}
-		if (node1 && node2)
-		{
-			add_link(e, node1, node2);
+		if (node1 && node2 && add_link(e, node1, node2))
 			add_link(e, node2, node1);
-		}
 		ret = 1;
 	}
 	free_tab(split);

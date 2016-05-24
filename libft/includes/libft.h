@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 14:27:02 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/23 00:44:00 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:19:27 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int				tt_psl(char *s, char *s2);
 int				tt_psn(char *s, int nb);
 int				tt_psns(char *s, int nb, char *s2);
 int				tt_pssn(char *s, char *s2, int nb);
+int				tt_psss(char *s, char *s2, char *s3);
 size_t			tt_slen(char *s);
 
 float			tt_sqrt(int x);

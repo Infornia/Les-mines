@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:53:05 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/24 23:05:04 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/25 00:07:35 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ void				print_links(t_node **t, int nb_nodes);
 void				free_env(t_env *e);
 void				free_tab(char **t);
 
-void				add_link(t_env *e, t_node *link, t_node *add);
+int					add_link(t_env *e, t_node *link, t_node *add);
 t_node				*find_end(t_env *e);
 #endif
