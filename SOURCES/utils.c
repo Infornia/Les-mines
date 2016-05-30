@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 06:44:52 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/25 00:07:22 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/05/29 23:13:15 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ t_node		*find_end(t_env *e)
 	int			i;
 	t_node		**n;
 
-	i = -1;
+	i = 0;
 	n = e->nodes;
-	while (++i < e->nb_nodes && n[i] && !n[i]->isend)
-		;
-	return (n[i] && n[i]->isend && ++n[i]->viewed ? n[i] : NULL);
+	while (i < e->nb_nodes && !n[i]->isend)
+		++i;
+	return (i < e->nb_nodes && n[i]->isend && ++n[i]->viewed ? n[i] : NULL);
 }
