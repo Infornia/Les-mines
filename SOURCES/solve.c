@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 08:18:03 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/25 00:10:03 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/01 16:17:09 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int		move_this(t_node **in, t_node **out, int first_move, int m)
 	static int		move = 1;
 
 	m && first_move ? tt_ps(CYAN) && tt_psns("Step ", move++, " : ") : 0;
-	first_move ? --first_move : ft_putchar(' ');
+	first_move ? --first_move : tt_pc(' ');
 	if ((*out)->isbegin)
 		(*out)->ant_name = ant_name++;
 	(*in)->ant_name = (*out)->ant_name;

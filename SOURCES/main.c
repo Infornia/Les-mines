@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:50:58 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/25 00:19:49 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/01 16:16:42 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static t_env	*init_env(void)
 	return (&env);
 }
 
-static void		error(void)
+static int	error(void)
 {
 	tt_pss(RED, "ERROR");
 	exit(0);
@@ -69,7 +69,7 @@ int				main(void)
 	t_env	*env;
 
 	env = init_env();
-	parse(env) ? ft_putendl("") : error();
+	parse(env) ? tt_pl("") : error();
 	if (env->nodes)
 	{
 		set_weight_end(env, find_end(env), 0) ? 0 : error();

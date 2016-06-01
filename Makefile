@@ -15,7 +15,7 @@ ifeq ($(BUILD),d)
     CFLAGS += -g
 endif
 ifeq ($(BUILD),o)
-    CFLAGS += -03
+    CFLAGS += -O3 -std=c89 -pedantic
 endif
 
 OS = 		$(shell uname -s)
