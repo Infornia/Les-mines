@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 18:51:54 by mwilk             #+#    #+#             */
-/*   Updated: 2014/12/03 21:17:44 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:40:56 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*ft_memcpy_rev(void *dst, const void *src, size_t len)
+static void	*ft_memcpy_rev(void *dst, void *src, size_t len)
 {
 	char	*d;
 	char	*s;
@@ -29,7 +29,7 @@ static void	*ft_memcpy_rev(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void		*ft_memmove(void *dst, void *src, size_t len)
 {
 	if (dst == NULL || src == NULL)
 		return (NULL);

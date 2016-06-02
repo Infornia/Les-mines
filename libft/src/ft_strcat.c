@@ -6,11 +6,11 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 22:36:51 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/10 15:08:51 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:46:49 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

@@ -6,11 +6,11 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 16:51:34 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/08 14:18:34 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:29:59 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

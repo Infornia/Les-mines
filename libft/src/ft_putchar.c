@@ -6,11 +6,11 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 16:39:35 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/08 14:21:13 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:45:26 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

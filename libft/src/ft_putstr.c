@@ -6,17 +6,17 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 22:28:48 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/12 17:40:44 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:45:58 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
 	while (str[i])
-		ft_putchar((char)str[i++]);
+		ft_putchar(str[i++]);
 }

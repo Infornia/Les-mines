@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/01 17:12:19 by mwilk             #+#    #+#             */
-/*   Updated: 2014/12/06 17:20:45 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:44:32 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+t_list		*ft_lstnew(void *content, size_t content_size)
 {
 	t_list	*to_ret;
 

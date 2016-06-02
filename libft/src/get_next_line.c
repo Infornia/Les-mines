@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 14:26:26 by mwilk             #+#    #+#             */
-/*   Updated: 2016/06/02 08:02:57 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:22:25 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		send_cut_keep(char **line, char **to_red, char *mother_cutter)
 	*line = *to_red;
 	*mother_cutter = '\0';
 	*to_red = ft_strdup(mother_cutter + 1);
-	return (ft_strlen(*line));
+	return ((int)ft_strlen(*line));
 }
 
 static	void	ft_strjoin_gnl(char **to_red, char *bull)
@@ -49,12 +49,13 @@ int				get_next_line(const int fd, char **line)
 		return (-1);
 	if (!to_red[fd])
 	{
-		if ((ret = read(fd, bull, BUFF_SIZE)) < 1)
+		if ((ret = (int)read(fd, bull, BUFF_SIZE)) < 1)
 			return (ret);
 		bull[ret] = 0;
 		to_red[fd] = ft_strdup(bull);
 	}
-	while (!ft_strchr(to_red[fd], '\n') && (ret = read(fd, bull, BUFF_SIZE)))
+	while (!ft_strchr(to_red[fd], '\n')
+		&& (ret = (int)read(fd, bull, BUFF_SIZE)))
 	{
 		bull[ret] = 0;
 		ft_strjoin_gnl(&to_red[fd], bull);

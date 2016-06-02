@@ -6,14 +6,14 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 22:54:43 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/12 17:22:51 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:34:32 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+void	ft_putendl(char *s)
 {
-	ft_putstr((char *)s);
+	ft_putstr(s);
 	ft_putchar('\n');
 }

@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 18:23:56 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/07 04:02:50 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:38:27 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, void *src, int c, size_t n)
 {
 	unsigned int	i;
 	char			*d;

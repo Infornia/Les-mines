@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 21:23:13 by mwilk             #+#    #+#             */
-/*   Updated: 2016/02/01 23:26:18 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:47:34 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
 	char		*dst_cp;
 	const char	*src_cp;
@@ -24,7 +24,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = size;
 	while (i-- != 0 && *dst_cp != '\0')
 		++dst_cp;
-	dlen = dst_cp - dst;
+	dlen = (size_t)(dst_cp - dst);
 	i = size - dlen;
 	if (i == 0)
 		return (dlen + ft_strlen(src_cp));
@@ -38,5 +38,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		++src_cp;
 	}
 	*dst_cp = '\0';
-	return (dlen + (src_cp - src));
+	return (dlen + (size_t)(src_cp - src));
 }

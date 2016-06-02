@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 16:55:47 by mwilk             #+#    #+#             */
-/*   Updated: 2014/12/08 14:39:14 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:33:35 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(char *s1, char *s2, size_t n)
 {
 	char		c;
 	char		sc;
@@ -38,5 +38,5 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		}
 		s1--;
 	}
-	return ((char *)s1);
+	return (s1);
 }

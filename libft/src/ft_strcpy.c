@@ -6,11 +6,11 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 19:07:07 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/08 18:22:04 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:34:06 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

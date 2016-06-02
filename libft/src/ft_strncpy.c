@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 21:17:43 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/08 18:27:59 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:47:52 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+char	*ft_strncpy(char *dst, char *src, size_t n)
 {
 	size_t	i;
 

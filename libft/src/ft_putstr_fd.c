@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 23:00:53 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/11 23:20:57 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:46:12 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int		i;
 

@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 22:02:15 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/09 22:14:23 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 22:33:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s + i);
+		f((unsigned int)i, s + i);
 		i++;
 	}
 }
