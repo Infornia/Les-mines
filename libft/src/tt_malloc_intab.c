@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/01 23:00:36 by mwilk             #+#    #+#             */
-/*   Updated: 2016/04/01 23:18:11 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:23:22 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		**tt_malloc_intab(int j, int i)
+int		**tt_malloc_intab(size_t j, size_t i)
 {
 	int		**tabint;
 	int		bzero;

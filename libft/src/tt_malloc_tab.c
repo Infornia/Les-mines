@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   tt_malloc_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 18:06:45 by mwilk             #+#    #+#             */
-/*   Updated: 2016/01/13 18:46:10 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:19:49 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**tt_malloc_tab(int size_1, int size_2)
+char	**tt_malloc_tab(size_t size_1, size_t size_2)
 {
 	char		**ret;
 	int			i;

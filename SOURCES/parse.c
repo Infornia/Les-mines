@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:51:39 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/25 00:08:03 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 07:58:40 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static	int		add_node(t_env *e)
 
 	split = ft_strsplit(e->line, ' ');
 	i = e->nb_nodes + 1;
-	if (!(tmp_nodes = (t_node **)malloc((sizeof(t_node *) * i))))
+	if (!(tmp_nodes = (t_node **)malloc((sizeof(t_node *) * (size_t)i))))
 		return (0);
 	i = -1;
 	while (++i < e->nb_nodes)

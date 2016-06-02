@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:53:05 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/02 07:44:11 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 07:57:48 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef	struct		s_env
 	int				nb_ants;
 	int				nb_nodes;
 	int				fd;
-	char			*line;
 	int				begin;
 	int				end;
 	int				info;
@@ -58,6 +57,7 @@ typedef	struct		s_env
 	int				color;
 	int				map;
 	int				path_found;
+	char			*line;
 }					t_env;
 
 int					set_nb_ants(t_env *env);

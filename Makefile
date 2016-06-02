@@ -2,7 +2,7 @@ NAME =		lem-in
 
 CC =		clang
 
-CFLAGS +=	-Wall -Wextra -Werror
+CFLAGS +=	-Wall -Wextra -Weverything
 
 SRC =		$(shell ls -1 SOURCES)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tt_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 18:06:45 by mwilk             #+#    #+#             */
-/*   Updated: 2016/01/13 18:47:31 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:15:29 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ float	tt_sqrt(int x)
 	s = 1;
 	while (++k < kmax)
 	{
-		prev = s;
+		prev = (int)s;
 		s = (s + x / s) / 2;
-		if (prev == s)
+		if (prev == (int)s)
 			break ;
 	}
 	return (s);

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tt_slen.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 12:15:01 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/19 17:25:02 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:18:03 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	tt_slen(char *s)
 {
@@ -19,5 +19,5 @@ size_t	tt_slen(char *s)
 	t = s;
 	while (*t)
 		++t;
-	return (t - s);
+	return ((size_t)(t - s));
 }

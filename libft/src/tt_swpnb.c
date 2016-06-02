@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   tt_swpnb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 18:04:11 by mwilk             #+#    #+#             */
-/*   Updated: 2016/01/13 18:07:01 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:15:33 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tt_swapnb(int *a, int *b)
+int	tt_swpnb(int *a, int *b)
 {
 	int	tmp;
 

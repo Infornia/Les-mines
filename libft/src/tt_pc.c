@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   tt_pc.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwilk <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 11:45:21 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/19 11:57:21 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:17:45 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	tt_pc(char c)
+int		tt_pc(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

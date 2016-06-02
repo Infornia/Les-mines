@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 14:26:26 by mwilk             #+#    #+#             */
-/*   Updated: 2016/05/11 03:48:16 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 08:02:57 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ int				get_next_line(const int fd, char **line)
 	if ((mother_cutter = ft_strchr(to_red[fd], '\n')))
 		return (send_cut_keep(line, &to_red[fd], mother_cutter));
 	freedom(&to_red[fd], line);
-	return (ft_strlen(*line));
+	return ((int)tt_slen(*line));
 }
