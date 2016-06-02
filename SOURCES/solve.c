@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 08:18:03 by mwilk             #+#    #+#             */
-/*   Updated: 2016/06/01 16:17:09 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 07:45:57 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,9 @@ static int		move_ants(t_node **nodes, int nb_nodes, int m, int nb_paths)
 int				solve(t_env *e)
 {
 	while (e->nodes[0]->ant_count != e->nb_ants)
+	{
 		move_ants(e->nodes, e->nb_nodes, e->move, e->path_found);
+		print_result(e, 0, 0);
+	}
 	return (1);
 }

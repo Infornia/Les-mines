@@ -6,19 +6,19 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:50:58 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/01 16:16:42 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/02 07:51:22 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "lemin.h"
 
-static void		print_result(t_env *env, int i, int after)
+void			print_result(t_env *env, int i, int after)
 {
 	if (!env->info)
 		return ;
 	if (!after)
-		tt_psss(RED, "\nKept this data :\n", BLUE);
+		tt_psss(RED, "\nCurrent data :\n", BLUE);
 	else
 		tt_psss(RED, "\nAfter solving :\n", BLUE);
 	tt_psns("Ants: ", env->nb_ants, "\n");
@@ -58,7 +58,7 @@ static t_env	*init_env(void)
 	return (&env);
 }
 
-static int	error(void)
+static int		error(void)
 {
 	tt_pss(RED, "ERROR");
 	exit(0);
