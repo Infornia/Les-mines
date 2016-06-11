@@ -6,27 +6,27 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:51:23 by spariaud          #+#    #+#             */
-/*   Updated: 2016/05/29 23:15:24 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 18:33:05 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "lemin.h"
 
-static	int	check_command(t_env *env)
+static	int	check_command(t_env *e)
 {
-	if (!env->begin && !env->end)
+	if (!e->begin && !e->end)
 	{
-		if (ft_strcmp(env->line, "##start") == 0)
-			return (env->begin++);
-		else if (ft_strcmp(env->line, "##end") == 0)
-			return (env->end++);
-		else if (ft_strcmp(env->line, "##info") == 0)
-			return (env->info++);
-		else if (ft_strcmp(env->line, "##move") == 0)
-			return (env->move++);
-		else if (ft_strcmp(env->line, "##map") == 0)
-			return (env->map++);
+		if (ft_strcmp(e->line, "##start") == 0)
+			return (e->begin++);
+		else if (ft_strcmp(e->line, "##end") == 0)
+			return (e->end++);
+		else if (ft_strcmp(e->line, "##info") == 0)
+			return (e->info++);
+		else if (ft_strcmp(e->line, "##move") == 0)
+			return (e->move++);
+		else if (ft_strcmp(e->line, "##map") == 0)
+			return (e->map++);
 	}
 	return (0);
 }
@@ -38,6 +38,8 @@ static int	no_same(t_env *e, char **split)
 	int			x;
 	int			y;
 
+	if (split[3])
+		return (0);
 	i = -1;
 	x = atoi(split[1]);
 	y = atoi(split[2]);

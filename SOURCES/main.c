@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:50:58 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/10 15:36:56 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 16:59:54 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			print_result(t_env *env, int i, int after)
 		tt_ps(")\n");
 		i++;
 	}
-	if (!after)
+	if (after)
 		print_links(env->nodes, env->nb_nodes);
 }
 
@@ -72,7 +72,7 @@ int				main(void)
 	parse(env) ? tt_pl("") : error();
 	if (env->nodes)
 	{
-		set_weight_end(env, find_end(env), env->nb_nodes) ? 0 : error();
+		set_weight_end(env, find_end(env), 0) ? 0 : error();
 		sort_nodes(env->nodes, env->nb_nodes);
 		print_result(env, 0, 0);
 		env->path_found ? solve(env) : error();

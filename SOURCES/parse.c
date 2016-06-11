@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:51:39 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/02 07:58:40 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 19:01:58 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ static	t_node	*new_node(t_env *e, char **split)
 	return (new);
 }
 
-static	int		add_node(t_env *e)
+static	int		add_node(t_env *e, char **split)
 {
 	int			i;
-	char		**split;
 	t_node		**tmp_nodes;
 
-	split = ft_strsplit(e->line, ' ');
 	i = e->nb_nodes + 1;
 	if (!(tmp_nodes = (t_node **)malloc((sizeof(t_node *) * (size_t)i))))
 		return (0);
@@ -51,6 +49,23 @@ static	int		add_node(t_env *e)
 	free(e->nodes);
 	e->nodes = tmp_nodes;
 	return (1);
+}
+
+static	char	**lemmin_split(char *s, char c)
+{
+	char	**ret;
+	char	*ptr;
+
+	ret = NULL;
+	if ((ptr = ft_strchr(s, c)))
+	{
+		ret = malloc(sizeof(char *) * 3);
+		*ptr = '\0';
+		ret[0] = ft_strdup(s);
+		ret[1] = ft_strdup(ptr + 1);
+		ret[2] = NULL;
+	}
+	return (ret);
 }
 
 int				parse(t_env *e)
@@ -71,10 +86,11 @@ int				parse(t_env *e)
 		else if (!parse_step && ++parse_step)
 			ret = set_nb_ants(e);
 		else if (parse_step == 1 && check(e, NODE_FORMAT))
-			ret = add_node(e);
+			ret = add_node(e, lemmin_split(e->line, ' '));
 		else if (parse_step == 2 || (parse_step == 1 && parse_step++))
-			ret = set_link(e, ft_strsplit(e->line, '-'));
-		free(e->line);
+			ret = set_link(e, lemmin_split(e->line, '-'));
+		ft_strdel(&e->line);
 	}
+	ft_strdel(&e->line);
 	return (ret > 0);
 }

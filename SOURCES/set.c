@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 19:04:16 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/10 16:12:40 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 18:56:24 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,47 +66,6 @@ int			set_link(t_env *e, char **split)
 	return (ret);
 }
 
-
-int			set_weight_end(t_env *e, t_node *end, int weight)
-{
-	t_node		**stack;
-	int			i;
-	int			j;
-	int			stack_ptr;
-
-	j = 0;
-	stack_ptr = 1;
-	if (end && end->links)
-	{
-		stack = malloc(sizeof(t_node *) * e->nb_nodes);
-		ft_bzero(stack, sizeof(t_node *) * e->nb_nodes);
-		stack[0] = end;
-		while (22)
-		{
-			i = -1;
-			if (stack[j] && !stack[j]->isbegin && ++stack[j]->viewed)
-				while (++i < stack[j]->links_count)
-				{
-					stack[j]->links[i]->weight_end = weight;
-					if (!stack[j]->links[i]->isbegin && ++e->path_found)
-						stack[j]->links[i]->ant_count = e->nb_ants;
-					else if (!stack[j]->links[i]->viewed)
-					{
-						stack[stack_ptr]=stack[j]->links[++i];
-						stack_ptr = (stack_ptr + 1) % e->nb_nodes;
-					}
-				}
-			else
-				break ;
-			stack[j] = NULL;
-			weight++;
-			j = (j + 1) % e->nb_nodes;
-		}
-	}
-	return (1);
-}
-
-/*
 int			set_weight_end(t_env *e, t_node *n, int w)
 {
 	int	i;
@@ -114,7 +73,8 @@ int			set_weight_end(t_env *e, t_node *n, int w)
 	i = -1;
 	if (!n || !n->links)
 		return (0);
-	n->weight_end = !n->weight_end ? w : n->weight_end;
+	if ((!n->weight_end && !n->isend) || n->weight_end > w)
+		n->weight_end = w;
 	n->ant_count = n->isbegin ? e->nb_ants : 0;
 	if (n->isbegin && ++e->path_found)
 		return (1);
@@ -124,4 +84,3 @@ int			set_weight_end(t_env *e, t_node *n, int w)
 			set_weight_end(e, n->links[i], w + 1);
 	return (1);
 }
-*/

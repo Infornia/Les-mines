@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 19:46:13 by mwilk             #+#    #+#             */
-/*   Updated: 2014/11/12 18:04:25 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 18:20:37 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap == NULL || *ap == NULL)
+	if (!ap || !(*ap))
 		return ;
 	free(*ap);
 	*ap = NULL;

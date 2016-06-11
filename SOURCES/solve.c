@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/05 08:18:03 by mwilk             #+#    #+#             */
-/*   Updated: 2016/06/02 07:45:57 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/11 16:57:22 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static int		move_ants(t_node **nodes, int nb_nodes, int m, int nb_paths)
 		{
 			if ((!nodes[i]->ant_count || nodes[i]->isend)
 				&& links[j]->ant_count
-				&& ((nodes[i]->weight_end < links[j]->weight_end
+				&& ((nodes[i]->weight_end + 1 == links[j]->weight_end
 				&& !nodes[i]->isbegin)
 				|| (links[j]->isbegin
 				&& nodes[i]->weight_end < links[j]->ant_count + nb_paths - 1)))
