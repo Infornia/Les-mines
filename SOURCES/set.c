@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 19:04:16 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/11 18:56:24 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 17:16:18 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ t_coord		set_coord(char **split)
 {
 	t_coord		coord;
 
-	coord.x = 0;
-	coord.y = 0;
+	coord.x = -1;
+	coord.y = -1;
 	if (split && split[1] && split[2]
 		&& ft_isnumber(split[1])
 		&& ft_isnumber(split[2]))

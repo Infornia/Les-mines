@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:50:58 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/11 16:59:54 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 17:25:26 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ static t_env	*init_env(void)
 	env.path_found = 0;
 	env.info = 0;
 	env.move = 0;
-	env.color = 0;
-	env.map = 0;
 	return (&env);
 }
 

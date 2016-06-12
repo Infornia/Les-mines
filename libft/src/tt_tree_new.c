@@ -6,13 +6,13 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 14:16:17 by mwilk             #+#    #+#             */
-/*   Updated: 2016/06/02 08:12:43 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 16:57:49 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tree	*tt_tree_new(void const *content, size_t content_size)
+t_tree	*tt_tree_new(void *content, size_t content_size)
 {
 	t_tree	*node;
 

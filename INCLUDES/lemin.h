@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:53:05 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/02 07:57:48 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 17:20:32 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ typedef	struct		s_env
 	int				end;
 	int				info;
 	int				move;
-	int				color;
-	int				map;
 	int				path_found;
 	char			*line;
 }					t_env;

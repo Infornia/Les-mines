@@ -6,7 +6,7 @@
 /*   By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 22:21:28 by mwilk             #+#    #+#             */
-/*   Updated: 2015/03/25 18:09:53 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 16:52:07 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*str;
+	unsigned int	i;
+	char			*str;
 
 	if (s == NULL || f == NULL)
 		return (NULL);

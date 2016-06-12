@@ -6,7 +6,7 @@
 #    By: mwilk <mwilk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 16:17:56 by mwilk             #+#    #+#              #
-#    Updated: 2016/06/02 08:00:01 by mwilk            ###   ########.fr        #
+#    Updated: 2016/06/12 17:28:16 by mwilk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = libft.a
 
 OS = $(shell uname -s)
 CC = clang
-FLAGS = -Wall -Wextra -Weverything
+FLAGS = -Werror -Weverything
 
 ## FILES
 
@@ -48,7 +48,7 @@ $(NAME) :	obj $(OBJ)
 
 obj/%.o:	src/%.c
 			@$(CC) $(FLAGS) $(INC) -o $@ -c $<
-#			@echo "\033[0;34;44m<(O.o)>\t\t$@\t\t<(o.O)>\033[0m"
+			@echo "\033[0;34;44m<(O.o)>\t\t$@\t\t<(o.O)>\033[0m"
 
 obj:
 			@mkdir -p $(OBJ_PATH)

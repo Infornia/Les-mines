@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/25 11:51:23 by spariaud          #+#    #+#             */
-/*   Updated: 2016/06/11 18:33:05 by mwilk            ###   ########.fr       */
+/*   Updated: 2016/06/12 17:20:17 by mwilk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static	int	check_command(t_env *e)
 			return (e->info++);
 		else if (ft_strcmp(e->line, "##move") == 0)
 			return (e->move++);
-		else if (ft_strcmp(e->line, "##map") == 0)
-			return (e->map++);
 	}
 	return (0);
 }
